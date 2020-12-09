@@ -1,0 +1,19 @@
+{{define "login"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+您好，请登录
+<form method="get" action="/stu/rlogin">
+    姓名：<input type="text" name="name"><br>
+    密码：<input type="password" name="password"><br>
+    <input type="submit">
+    <a href="/admin/login">管理员登陆</a>
+    <a href="/stu/regist">注册</a>
+</form>
+</body>
+</html>
+{{end}}

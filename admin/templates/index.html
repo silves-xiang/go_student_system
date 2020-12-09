@@ -1,0 +1,14 @@
+{{define "adminindex"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{range .}}
+    姓名：<a href="/admin/detail?id={{.Id}}" >{{.Name}}</a><br>
+{{end}}
+</body>
+</html>
+{{end}}

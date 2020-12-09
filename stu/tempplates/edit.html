@@ -1,0 +1,19 @@
+{{define "edit"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/stu/redit">
+    姓名：<input type="text" name="name" value="{{.Name}}">
+    性别：<input type="text" name="sex" value="{{.Sex}}">
+    地址：<input type="text" name="address" value="{{.Address}}">
+    学校：<input type="text" name="school" value="{{.School}}">
+    爱好：<input type="text" name="hobby" value="{{.Hobby}}">
+    <input type="submit">
+</form>
+</body>
+</html>
+{{end}}

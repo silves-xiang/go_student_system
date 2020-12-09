@@ -1,0 +1,37 @@
+{{define "detail"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../static/jquery-3.5.1.min.js"></script>
+<body>
+学生基本信息：
+姓名：{{.Student.Name}}<br>
+性别：{{.Student.Sex}}<br>
+地址：{{.Student.Address}}<br>
+学校：{{.Student.School}}<br>
+爱好：{{.Student.Hobby}}<br>
+是否已经认证：
+{{if eq .Student.Isauto "yes"}}
+    已认证&nbsp<br>
+        认证人：{{.Student.Autoname}}
+        {{else}}
+    未认证
+    {{end}}<br>
+<button onclick="submit()">认证</button>
+<script>
+    function submit() {
+        $.ajax({
+            type: "GET",
+            url: "/admin/auto",
+            data: { id :{{.Student.Id}},adminid: {{.Adminid}} },
+            dataType: "JSON",
+        });
+        location.reload(true);
+    }
+</script>
+</body>
+</html>
+{{end}}

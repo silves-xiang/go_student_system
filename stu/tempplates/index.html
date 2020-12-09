@@ -1,0 +1,25 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+你的基本信息
+姓名：{{.Name}}<br>
+性别：{{.Sex}}<br>
+地址：{{.Address}}<br>
+学校：{{.School}}<br>
+爱好：{{.Hobby}}<br>
+是否认证{{if eq .Isauto "yes"}}
+    已认证<br>
+       认证人： {{.Autoname}}
+        {{else}}
+    未认证
+    {{end}}<br>
+<a href="/stu/edit">编辑信息</a>
+
+</body>
+</html>
+{{end}}
